@@ -218,7 +218,7 @@ func runBackground(id int) {
 			log.Print("no command")
 			return
 		}
-		m0, _, err := win.ReadAddr()
+		m0, _, _ := win.ReadAddr()
 		if m0 < q0 {
 			// wrapped around
 			win.Addr("#%d", q0)

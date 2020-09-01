@@ -59,7 +59,7 @@ func (c *Conn) newfid() (*Fid, error) {
 	c.x.Lock()
 	defer c.x.Unlock()
 	var fidnum uint32
-	for fidnum, _ = range c.freefid {
+	for fidnum = range c.freefid {
 		delete(c.freefid, fidnum)
 		goto found
 	}
@@ -85,7 +85,7 @@ func (c *Conn) newtag(ch chan *plan9.Fcall) (uint16, error) {
 	c.x.Lock()
 	defer c.x.Unlock()
 	var tagnum uint16
-	for tagnum, _ = range c.freetag {
+	for tagnum = range c.freetag {
 		delete(c.freetag, tagnum)
 		goto found
 	}

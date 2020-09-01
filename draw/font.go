@@ -255,7 +255,7 @@ func loadchar(f *Font, r rune, c *cacheinfo, h int, noflush bool) (int, string) 
 
 	pic = r
 Again:
-	for i, cf = range f.sub {
+	for _, cf = range f.sub {
 		if cf.min <= pic && pic <= cf.max {
 			goto Found
 		}
